@@ -21,7 +21,7 @@ namespace WebApplication1.Model
 
         public int catogreysId { get; set; }
 
-        public catogries catogries { get; set; }
+        public catogries ? catogries { get; set; }
 
 
     }

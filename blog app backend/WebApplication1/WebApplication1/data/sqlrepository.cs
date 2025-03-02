@@ -4,7 +4,7 @@ using Microsoft.Identity.Client;
 using WebApplication1.data;
 namespace WebApplication1.data
 {
- public class sqlrepository<T> : iRepository<T> where T : class
+ public class sqlrepository<T> : iRepository <T> where T : class
     {
         private readonly AppDbContextcs dbContextcs;
 
@@ -39,9 +39,11 @@ namespace WebApplication1.data
            await dbContextcs.SaveChangesAsync();
         }
 
-        public void Task(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            dbContextcs.Update(entity);
+
+            dbContextcs.Set<T>().Update(entity); 
+            await dbContextcs.SaveChangesAsync();
         }
     }
 

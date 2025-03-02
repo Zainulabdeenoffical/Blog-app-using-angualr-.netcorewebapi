@@ -22,7 +22,7 @@ builder.Services.AddDbContext<AppDbContextcs>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<iRepository<blog>,sqlrepository<blog>>();
-builder.Services.AddScoped<iRepository<catogries>, sqlrepository<catogries>>();
+builder.Services.AddScoped<iRepository<catogries>,sqlrepository<catogries>>();
 
 var app = builder.Build();
 
