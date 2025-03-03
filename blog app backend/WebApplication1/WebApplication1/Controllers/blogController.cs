@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using WebApplication1.data;
 using WebApplication1.Model;
 
@@ -15,7 +16,7 @@ namespace WebApplication1.Controllers
         {
            _blogrepository = blogrepository;
         }
-        [HttpGet()]
+        [HttpGet]
 
         public async Task<IActionResult> getAllBlog()
         {
@@ -25,6 +26,7 @@ namespace WebApplication1.Controllers
             return Ok(getbloglist);
 
         }
+
 
         [HttpGet("{id}")]
 
@@ -72,10 +74,23 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> DeleteBlog([FromRoute] int id)
         {
              await _blogrepository.DeleteAsync(id);
+            _blogrepository.SavechnagesAsync();
 
             return Ok();
 
         }
+
+        [HttpGet("featured")]
+
+        public async Task<IActionResult> getAllBlogFaturedlist()
+        {
+
+            var blog  = await _blogrepository.Getall(x=>x.isfeatured==true);
+
+            return Ok(blog);
+
+        }
+
 
     }
 }

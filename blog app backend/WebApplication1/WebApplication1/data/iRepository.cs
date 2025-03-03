@@ -1,10 +1,13 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 
 namespace WebApplication1.data
 {
     public interface iRepository<T> where T : class
     {
         Task<List<T>> Getall();
+
+        Task<List<T>> Getall(Expression<Func<T, bool >> filter);
 
         Task<T> GetbyId(int id);
 

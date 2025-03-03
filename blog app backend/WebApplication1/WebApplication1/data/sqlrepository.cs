@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using System.Linq.Expressions;
 using WebApplication1.data;
 namespace WebApplication1.data
 {
@@ -27,6 +28,11 @@ namespace WebApplication1.data
         public async Task<List<T>> Getall()
         {
            return await dbContextcs.Set<T>().ToListAsync();
+        }
+
+        public async Task<List<T>> Getall(Expression<Func<T, bool>> filter)
+        {
+            return await dbContextcs.Set<T>().Where(filter).ToListAsync();
         }
 
         public async Task<T> GetbyId(int id)
