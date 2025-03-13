@@ -1,10 +1,13 @@
-<div class="bg-blue-400 flex justify-between px-20 h-16 items-center">
-    <span class="text-white font-bold">Blog App</span>
-    <span class="example-spacer"></span>
-    <ul class="flex gap-4">
-       <li><a href="/blog" class="text-white hover:underline">Blogs</a></li>
-       <li><a href="/about" class="text-white hover:underline">About Us</a></li>
-    </ul>
- </div>
- 
+<mat-toolbar>
+  <span>Blog App</span>
+  <span class="example-spacer"></span>
+  <a routerLink="/home" routerLinkActive="active"> Home</a>
+  <a routerLink="/about" routerLinkActive="active"> About</a>
+  <a routerLink="/blog" routerLinkActive="active"> Blog</a>
+  <a routerLink="/blogs" routerLinkActive="active"> Blogs</a>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+      
+    
   
