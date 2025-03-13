@@ -1,6 +1,6 @@
- <div class="flex flex-col justify-center items-center px-20 h-80 text-center">
-    <h1 class="text-2xl font-bold">Welcome to BlogApp</h1>
-    <p class="w-6/12 text-lg text-gray-600 mt-2">
+<div>
+    <h1>Welcome to BlogApp</h1>
+    <p>
         BlogApp is a modern and user-friendly platform designed for sharing ideas, stories, and insights. 
         It allows users to create, read, and engage with blog posts on various topics, offering a seamless 
         and interactive experience. 🚀
@@ -8,7 +8,21 @@
 </div>
 
 <div>
-    <h2>
-        featured Blog 
-    </h2>
+    <h2>Featured Blog</h2>
+    @for (item of featuredblog; track $index) {
+    <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{item.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="item.images" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>{{item.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>Read More</button>
+        </mat-card-actions>
+    </mat-card>
+    }
 </div>
+    
