@@ -1,15 +1,6 @@
 <div>
-    <h1>Welcome to BlogApp</h1>
-    <p>
-        BlogApp is a modern and user-friendly platform designed for sharing ideas, stories, and insights. 
-        It allows users to create, read, and engage with blog posts on various topics, offering a seamless 
-        and interactive experience. 🚀
-    </p>
-</div>
-
-<div>
-    <h2>Featured Blog</h2>
-    @for (item of featuredblog; track $index) {
+  <h1>All blogs </h1>
+   @for (item of featuredblog; track $index) {
     <mat-card class="example-card" appearance="outlined">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
@@ -24,7 +15,6 @@
 
         </mat-card-actions>
     </mat-card>
-    <app-blogs-card ></app-blogs-card>
     }
+
 </div>
-    

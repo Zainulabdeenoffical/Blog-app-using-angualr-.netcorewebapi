@@ -8,7 +8,7 @@ export const routes: Routes = [
 
         {path:' ',component:HomeComponent},
         { path:'home',component: HomeComponent },
-        { path: 'blog', component: BlogComponent },
+        { path: 'blog/:id', component: BlogComponent },
         { path: 'blogs', component: BlogsComponent },
         { path: 'about', component: AboutComponent },
         { path: '**', redirectTo: 'home', pathMatch:'full' }
